@@ -1,0 +1,113 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-en: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --font-bn: 'Noto Sans Bengali', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    --color-bg-primary: #06251F;
+    --color-bg-surface: #0B3A2E;
+    --color-bg-charcoal: #111111;
+    --color-accent-gold: #D4AF37;
+    --color-text-light: #F5F3EA;
+  }
+
+  body {
+    font-family: var(--font-en);
+    background-color: var(--color-bg-primary);
+    color: var(--color-text-light);
+    overflow-x: hidden;
+  }
+
+  body.lang-bn {
+    font-family: var(--font-bn);
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #06251F;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #0B3A2E;
+  border-radius: 4px;
+  border: 1px solid rgba(212, 175, 55, 0.2);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #D4AF37;
+}
+
+/* Gold foil sheen effect */
+.gold-shimmer {
+  background: linear-gradient(135deg, #ECC86A 0%, #D4AF37 50%, #A88620 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gold-border-glow {
+  border-color: rgba(212, 175, 55, 0.35);
+  box-shadow: 0 0 25px -5px rgba(212, 175, 55, 0.15);
+}
+
+.gold-gradient-bg {
+  background: linear-gradient(135deg, #D4AF37 0%, #BF9B2D 100%);
+}
+
+/* Rotating White, Red and Green Lighting Border Animation for Photo Frame */
+@keyframes spin-border {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin-border {
+  animation: spin-border 9s linear infinite;
+}
+
+.red-green-frame {
+  position: relative;
+  overflow: hidden;
+  padding: 6px;
+  border-radius: 1.5rem;
+  box-shadow: 0 0 30px rgba(255, 255, 255, 0.25), 0 0 35px rgba(244, 42, 65, 0.35), 0 0 35px rgba(0, 106, 78, 0.35);
+}
+
+.red-green-frame::before {
+  content: '';
+  position: absolute;
+  top: -60%;
+  left: -60%;
+  width: 220%;
+  height: 220%;
+  background: conic-gradient(
+    from 0deg,
+    #FFFFFF 0deg,
+    #F42A41 60deg,
+    #006A4E 120deg,
+    #FFFFFF 180deg,
+    #F42A41 240deg,
+    #006A4E 300deg,
+    #FFFFFF 360deg
+  );
+  animation: spin-border 9s linear infinite;
+  z-index: 0;
+}
+
+.red-green-frame-inner {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  border-radius: calc(1.5rem - 6px);
+  overflow: hidden;
+  background-color: #06251F;
+}
+

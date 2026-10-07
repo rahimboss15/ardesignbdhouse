@@ -1,0 +1,6 @@
+{
+  "name": "AR DesignBD - Creative Digital Studio",
+  "description": "AR DesignBD by Abdur Rahim — Graphic Design, Branding, Digital Creative, Video Editing and AI Creative Design.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
